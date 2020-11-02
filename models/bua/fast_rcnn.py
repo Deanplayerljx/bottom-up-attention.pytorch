@@ -266,6 +266,8 @@ class BUACaffeFastRCNNOutputLayers(nn.Module):
         if x.dim() > 2:
             x = torch.flatten(x, start_dim=1)
         scores = self.cls_score(x)
+        # print('scores')
+        # print(scores)
         proposal_deltas = self.bbox_pred(x)
 
         if self.attr_on:
